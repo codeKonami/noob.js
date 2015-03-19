@@ -11,7 +11,10 @@
     "ejs-locals": "~1.0.2"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.5.1"
+    "grunt": "^0.4.5",
+    "grunt-express-server": "*",
+    "grunt-parallel": "*",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^0.4.0"
   }
 }
