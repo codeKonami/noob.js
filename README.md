@@ -1,4 +1,4 @@
-#Noob.js 0.1.0
+#Noob.js 0.1.1
 
 Noob.js is a simple framework... well it's actually not even a framework per se it's more a tool for front-end developer to start really quickly with html integration.
 
