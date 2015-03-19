@@ -1,21 +1,65 @@
 /*global module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+  require('load-grunt-tasks')(grunt);
 
-  // Project configuration.
   grunt.initConfig({
-    // Task configuration.
-    watch: {
-      files: ['public/*.*','app.js','views/*.ejs'],
-      tasks: [],
+    express: {
       options: {
-        // Start a live reload server on the default port 35729
-        livereload: true,
-        hostname:'0.0.0.0'
+        // Override defaults here
+      },
+      web: {
+        options: {
+          script: 'app.js',
+        }
+      },
+    },
+    watch: {
+      frontend: {
+        options: {
+          livereload: true
+        },
+        files: [
+          // triggering livereload when the .css file is updated
+          // (compared to triggering when sass completes)
+          // allows livereload to not do a full page refresh
+          'public/css/*.css',
+          'views/**/*.ejs',
+          'public/js/*.js',
+          'public/img/**/*'
+        ]
+      },
+      web: {
+        files: [
+          'app.js',
+          'controllers/*.js',
+        ],
+        tasks: [
+          'express:web'
+        ],
+        options: {
+          spawn: false, //Without this option specified express won't be reloaded
+          atBegin: true,
+        }
       }
+    },
+    parallel: {
+      web: {
+        options: {
+          stream: true
+        },
+        tasks: [{
+          grunt: true,
+          args: ['watch:frontend']
+        },  {
+          grunt: true,
+          args: ['watch:web']
+        }]
+      },
     }
-
   });
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('web', 'launch webserver and watch tasks', [
+    'parallel:web',
+  ]);
+
+  grunt.registerTask('default', ['web']);
 };
