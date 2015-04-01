@@ -21,4 +21,4 @@ node_modules
 .vagrant
 npm-debug.log
 
-public/scss/.sass-cache
+.sass-cache
