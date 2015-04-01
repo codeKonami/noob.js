@@ -1,4 +1,4 @@
-#Noob.js 0.1.1
+#Noob.js 0.1.2
 
 Noob.js is a simple framework... well it's actually not even a framework per se it's more a tool for front-end developer to start really quickly with html integration.
 
@@ -38,6 +38,13 @@ You can pass some variables to the view through the controllers inside the folde
 You can view all the assets (js, css, ...) in the public/ folder
 
 #Changelog
+##0.1.2
+- Adding 404
+- Adding scss
+
+
+##0.1.1
+- Adding Livereload
 
 ##0.1.0 : First release
 - Vagrantfile to install anywhere through vagrant
