@@ -15,6 +15,7 @@
     "grunt-express-server": "*",
     "grunt-parallel": "*",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-compass": "1.0.2",
     "load-grunt-tasks": "^0.4.0"
   }
 }

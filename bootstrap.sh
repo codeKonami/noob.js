@@ -3,6 +3,7 @@
 apt-get update
 apt-get install -y nginx
 sudo apt-get install -y git
+sudo apt-get install -y curl
 apt-get install -y vim
 sudo apt-get install -y build-essential
 sudo apt-get install -y python-software-properties python g++ make
@@ -41,7 +42,18 @@ cd /home/app/public_html
 sudo npm install --no-bin-links
 sudo npm install grunt-cli --no-bin-links
 sudo npm install grunt --no-bin-links
-node app &
+
+
+sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -L https://get.rvm.io | bash -s stable
+source /etc/profile.d/rvm.sh
+rvm requirements
+rvm install ruby
+rvm use ruby --default
+rvm rubygems current
+gem install compass
+
+#node app &
 sudo fuser -v 3000/tcp
 ifconfig|perl -nE'/dr:(\S+)/&&say$1'
 ./node_modules/grunt-cli/bin/grunt

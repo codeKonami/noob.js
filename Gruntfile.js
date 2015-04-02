@@ -3,6 +3,15 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
+    compass: {                  // Task
+      dist: {                   // Target
+        options: {              // Target options
+          sassDir: 'public/scss',
+          cssDir: 'public/css',
+          environment: 'production'
+        }
+      },
+    },
     express: {
       options: {
         // Override defaults here
@@ -14,6 +23,12 @@ module.exports = function (grunt) {
       },
     },
     watch: {
+      stylesSass: {
+        files: ['public/scss/**/*.scss'],
+        tasks: [
+          'compass'
+        ]
+      },
       frontend: {
         options: {
           livereload: true
@@ -51,6 +66,9 @@ module.exports = function (grunt) {
           grunt: true,
           args: ['watch:frontend']
         },  {
+          grunt: true,
+          args: ['watch:stylesSass']
+        }, {
           grunt: true,
           args: ['watch:web']
         }]
