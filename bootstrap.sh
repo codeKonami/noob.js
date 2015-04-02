@@ -43,6 +43,8 @@ sudo npm install --no-bin-links
 sudo npm install grunt-cli --no-bin-links
 sudo npm install grunt --no-bin-links
 
+
+sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 \curl -L https://get.rvm.io | bash -s stable
 source /etc/profile.d/rvm.sh
 rvm requirements
@@ -51,7 +53,7 @@ rvm use ruby --default
 rvm rubygems current
 gem install compass
 
-node app &
+#node app &
 sudo fuser -v 3000/tcp
 ifconfig|perl -nE'/dr:(\S+)/&&say$1'
 ./node_modules/grunt-cli/bin/grunt

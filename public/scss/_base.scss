@@ -1,5 +1,11 @@
-$primary-color: green;
+$primary-color: red;
+$other-color: blue;
 
 ul li.active{
   color: $primary-color;
+}
+
+.fun{
+  font-size: 40px;
+  color: $other-color;
 }
