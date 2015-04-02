@@ -41,7 +41,7 @@ You can view all the assets (js, css, ...) in the public/ folder
 ##0.1.2
 - Adding 404
 - Adding scss
-
+- compass installation in bootstrap.sh
 
 ##0.1.1
 - Adding Livereload
