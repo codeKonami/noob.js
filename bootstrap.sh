@@ -56,4 +56,13 @@ gem install compass
 #node app &
 sudo fuser -v 3000/tcp
 ifconfig|perl -nE'/dr:(\S+)/&&say$1'
-./node_modules/grunt-cli/bin/grunt
+
+echo 'start on startup
+      script
+        cd /home/app/public_html
+        ./node_modules/grunt-cli/bin/grunt
+      end  script
+' > /etc/init
+
+
+#./node_modules/grunt-cli/bin/grunt
