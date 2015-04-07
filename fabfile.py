@@ -1,4 +1,4 @@
-from fabric.api import env, local, run
+from fabric.api import env, local, run, cd
 
 def noob():
     # change from the default user to 'vagrant'
@@ -11,11 +11,5 @@ def noob():
     env.key_filename = result.split()[1]
 
 def start():
-    run('source /etc/profile.d/rvm.sh')
-    run('sudo service noob start')
-
-def stop():
-    run('sudo service noob stop')
-
-def restart():
-    run('sudo service noob restart')
+    with cd('/home/app/public_html'):
+        run('./node_modules/grunt-cli/bin/grunt')
