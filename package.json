@@ -12,10 +12,10 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-express-server": "*",
     "grunt-parallel": "*",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-contrib-compass": "1.0.2",
+    "grunt-sass": "^0.18.1",
     "load-grunt-tasks": "^0.4.0"
   }
 }
