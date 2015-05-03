@@ -41,17 +41,6 @@ service nginx restart
 cd /home/app/public_html
 sudo npm install --no-bin-links
 sudo npm install grunt-cli --no-bin-links
-sudo npm install grunt --no-bin-links
-
-#Install ruby through rvm
-sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-\curl -L https://get.rvm.io | bash -s stable
-source /etc/profile.d/rvm.sh
-rvm requirements
-rvm install ruby
-rvm use ruby --default
-rvm rubygems current
-gem install compass
 
 #node app &
 sudo fuser -v 3000/tcp
