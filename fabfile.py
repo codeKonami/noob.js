@@ -12,4 +12,8 @@ def noob():
 
 def start():
     with cd('/home/app/public_html'):
-        run('./node_modules/grunt-cli/bin/grunt')
+        run('grunt')
+
+def maj():
+    with cd('/home/vagrant'):
+        run('sudo npm install')

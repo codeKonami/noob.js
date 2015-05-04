@@ -38,9 +38,15 @@ rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/app /etc/nginx/sites-enabled/app
 
 service nginx restart
+
 cd /home/app/public_html
-sudo npm install --no-bin-links
-sudo npm install grunt-cli --no-bin-links
+sudo rm -Rf node_modules
+sudo cp package.json /home/vagrant/
+cd /home/vagrant
+sudo npm install -g grunt-cli
+sudo npm install
+
+ln -s /home/vagrant/node_modules /home/app/public_html/node_modules
 
 #node app &
 sudo fuser -v 3000/tcp
