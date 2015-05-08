@@ -3,14 +3,15 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
-    compass: {                  // Task
-      dist: {                   // Target
-        options: {              // Target options
-          sassDir: 'public/scss',
-          cssDir: 'public/css',
-          environment: 'production'
+    sass: {
+        options: {
+            sourceMap: true
+        },
+        dist: {
+            files: {
+                'public/css/style.css': 'public/scss/style.scss'
+            }
         }
-      },
     },
     express: {
       options: {
@@ -26,7 +27,7 @@ module.exports = function (grunt) {
       stylesSass: {
         files: ['public/scss/**/*.scss'],
         tasks: [
-          'compass'
+          'sass'
         ]
       },
       frontend: {

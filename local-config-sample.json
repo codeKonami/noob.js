@@ -1,0 +1,12 @@
+{
+  "public" : {
+    "hostname" : "localhost",
+    "livereload" : true,
+    "title" : "This is a noob.js app",
+    "description" : "The power of node.js in a matter of seconds.",
+    "UA":"UA-XXXXX-X"
+  },
+  "private" : {
+    "email" : "example@example.com"
+  }
+}

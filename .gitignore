@@ -22,3 +22,7 @@ node_modules
 npm-debug.log
 
 .sass-cache
+local-config.json
+
+public/css/style.css
+public/css/style.css.map
