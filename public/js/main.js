@@ -17,7 +17,7 @@ NOOB = {
       // action-specific code
       $('.fun').click(function(e){
         e.preventDefault();
-        alert('fffunnnn');
+        alert('Awesome');
       });
     }
   },
