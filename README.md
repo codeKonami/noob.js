@@ -1,4 +1,4 @@
-#Noob.js 0.1.4
+#Noob.js 0.1.6
 
 Noob.js is a simple framework... well it's actually not even a framework per se it's more a tool for front-end developer to start really quickly with html integration.
 
@@ -9,8 +9,9 @@ You'll need at least node.js and npm installed on your machine. If you are runni
 If you have node.js and npm you just need to do
 
 ```bash
+cp local-config-sample.json local-config.json
 npm install
-node app.js
+grunt
 #Your app will be available at http://localhost:3000
 ```
 
@@ -74,6 +75,13 @@ You can pass some variables to the view through the controllers inside the folde
 You can view all the assets (js, css, ...) in the public/ folder
 
 #Changelog
+
+##0.1.6
+- Using Bootstrap CDN instead of the full SASS project
+
+##0.1.5
+- Ajout de Bootstrap
+
 ##0.1.4
 - Using libsass instead of compass to reduce the compilation delays
 - adding a config.json for production and a local-config.json for development
