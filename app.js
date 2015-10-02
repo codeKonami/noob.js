@@ -6,12 +6,21 @@ var express = require('express'),
     controllers = require('./controllers'),
     http = require('http'),
     path = require('path'),
-    engine = require('ejs-locals');
+    engine = require('ejs-locals'),
+    fs = require('fs');
 
 var app = express();
+var app_name = "";
+try {
+    stats = fs.lstatSync('./genuine.json');
+    var genuine = require('./genuine.json');
+    app_name = genuine.app_name;
+}
+catch (e) {
 
+}
 app.engine('ejs', engine);
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.["NODE_ENV_"+app_name+"_port"] || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.favicon(path.join(__dirname, 'public/favicon.ico')));
@@ -46,7 +55,7 @@ app.use(function(req, res, next){
 app.get('/', controllers.index);
 app.get('/contact', controllers.contact);
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.["NODE_ENV_"+app_name+"_port"] || 3000;
 
 http.createServer(app).listen(PORT, function() {
   console.log('Your noob.js app on port ' + PORT);
